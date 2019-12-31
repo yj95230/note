@@ -1,0 +1,8 @@
+HSSF，XSSF和SXSSF的区别和注意事项（poi读取不到excel数据的行）：https://blog.csdn.net/qq_20009015/article/details/87568028
+
+
+POI使用HSSF，XSSF，SXSSF三种方式：https://www.jianshu.com/p/c8766986b95b
+
+
+
+一个封装的poi开源包--easy poi：https://gitee.com/nw1992/easy-poi

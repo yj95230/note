@@ -1,0 +1,42 @@
+jpa中实体的对应关系：
+					https://www.cnblogs.com/lone5wolf/p/10940844.html
+					https://blog.csdn.net/pengjunlee/article/details/79972059
+					
+@OneToMany中的mappedBy属性：
+							https://my.oschina.net/u/2453016/blog/993791
+							
+							
+/*单向多对一的关联关系
+使用@ManyToOne来映射多对一的关联关系
+使用@JoinColumn来映射外键
+name为关联表的列列名
+可使用@ManyToOne的fetch属性来修改默认的关联属性的加载策略*/							
+
+hibernate中many-to-one的not-found属性和@notfound注解：
+https://www.cnblogs.com/yanggb/p/11168313.html
+
+
+@JoinColumn的name和referencedColumnName：
+https://blog.csdn.net/z69183787/article/details/20044343
+
+
+总结DetachedCriteria级联查询（取别名查询）：
+https://www.iteye.com/blog/bubble-418926
+
+jpa的@JoinColumns解决有多个联合关联条件
+
+jpa使用Specification实现子查询及连接查询：https://blog.csdn.net/xuyp95/article/details/91909036
+
+jpa的多表关联查询：https://blog.csdn.net/qq_34117825/article/details/71123876
+
+jpa中解决复合主键：https://blog.csdn.net/tracycater/article/details/78319021  https://www.iteye.com/problems/6846
+
+jpa中实现查询（使用@Query、Criteria 查询来进行查询）：https://www.cnblogs.com/liyinfeng/p/8031916.html
+
+jpa实现join查询：https://blog.csdn.net/qq587492/article/details/81629689
+
+jpa使用Specification查询：https://blog.csdn.net/wangchengming1/article/details/90639553
+
+Jpa的@Fetch抓取策略：https://blog.csdn.net/sinat_28454173/article/details/52327220
+
+jpa-spec（jpa的一个查询库）：https://github.com/wenhao/jpa-spec/blob/master/README_CN.md

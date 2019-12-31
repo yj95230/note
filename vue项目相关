@@ -1,0 +1,13 @@
+vue项目中导入elementUI和css：https://blog.csdn.net/lzrit/article/details/81218603
+
+
+关于HBuilderX开发Vue提示消失的问题：https://ask.dcloud.net.cn/question/58219
+
+https://blog.csdn.net/qq_34817440/article/details/102778334
+
+
+package.json：
+"rules": {
+  "no-console": "off",//解决在控制台直接使用console报错
+  "no-debugger": "off"//解决在代码中使用debugger报错
+},

@@ -1,0 +1,5 @@
+http://blog.csdn.net/zhuyijian135757/article/details/38269715
+
+Jackson将字符串转成泛型List    ------http://www.cnblogs.com/quanyongan/archive/2013/04/16/3024993.html
+
+Jackson的注解：https://www.jianshu.com/p/201943f8d579

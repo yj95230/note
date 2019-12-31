@@ -1,0 +1,4 @@
+npm install：
+            -save是安装到dependencies(依赖)中的，而--save-dev是安装到devDependencies（开发依赖）中
+
+错误：ERROR in Cannot find module 'node-sass'----https://blog.csdn.net/Nalaluky/article/details/82598300

@@ -1,0 +1,20 @@
+1、文件上传的类型设置multipart/form-data和text/plain区别：https://blog.csdn.net/linghuainian/article/details/82253247
+
+2、文件的上传：
+             2.1：采用text/plain方式----https://blog.csdn.net/sikedaima/article/details/94436514
+             2.2：https://blog.csdn.net/lan_xuewei/article/details/82972712
+             2.3：采用multipart/form-data：https://blog.51cto.com/5013162/2435846
+
+3、文件下载，服务器端：https://www.cnblogs.com/Scott007/p/3817285.html
+
+
+SpringBoot中的文件上传：
+                        https://www.shiyanlou.com/courses/reports/1383259/
+
+SpringMvc中的获取上传文件的几种方式：
+                                    https://www.iteye.com/blog/zzc1684-2258463
+
+commons-fileupload实现文件的上传：https://blog.csdn.net/qq_34584694/article/details/80455086
+
+
+使用 JavaScript File API 实现文件上传：https://www.ibm.com/developerworks/cn/web/1101_hanbf_fileupload/index.html

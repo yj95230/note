@@ -1,0 +1,25 @@
+Java8如何让Excel的读写变得更加简单高效：https://yq.aliyun.com/articles/712390?spm=a2c4e.11153940.0.0.616091cdEuCrDx
+
+
+JAVA使用POI导出百万级别数据解决方案：https://yq.aliyun.com/articles/597862?spm=a2c4e.11153940.0.0.616091cdEuCrDx
+
+
+HSSFworkbook,XSSFworkbook,SXSSFworkbook区别总结：https://blog.csdn.net/sinat_29279767/article/details/86578658
+
+
+SXSSFWorkbook只能写不能读，假如系统中存在一种操作，需要将导出的文件再次进行导入，这时就可以使用SXSSFWorkbook的另外一个构造函数：
+SXSSFWorkbook(XSSFWorkbook workbook)Construct a workbook from a template.通过XSSFWorkbook来读取模版，然后用SXSSFWorkbook来设置
+样式和写数据，详细使用就参考API吧----》http://poi.apache.org/apidocs/org/apache/poi/xssf/streaming/SXSSFWorkbook.html
+
+关于在什么情况下使用构造器（SXSSFWorkbook(XSSFWorkbook workbook)）：https://my.oschina.net/laigous/blog/375077?p=1
+
+
+1.HSSFWorkbook:是操作Excel2003以前（包括2003）的版本，扩展名是.xls；
+
+2.XSSFWorkbook:是操作Excel2007的版本，扩展名是.xlsx；
+
+对于不同版本的EXCEL文档要使用不同的工具类，如果使用错了，会提示如下错误信息。
+
+org.apache.poi.openxml4j.exceptions.InvalidOperationException
+
+org.apache.poi.poifs.filesystem.OfficeXmlFileException

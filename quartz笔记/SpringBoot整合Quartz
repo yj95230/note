@@ -1,0 +1,23 @@
+需要的jar包：
+        <dependency>
+            <groupId>org.quartz-scheduler</groupId>
+            <artifactId>quartz</artifactId>
+             <version>版本</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-quartz</artifactId>
+            <version>版本</version>
+        </dependency>
+
+学习：https://www.jianshu.com/p/d52d62fb2ac6
+
+SchedulerFactoryBean的介绍及配置方法：https://blog.csdn.net/zhangxtn/article/details/49584071
+
+Trigger接口中的过期策略：https://blog.csdn.net/GAMEloft9/article/details/89475980
+CronTrigger的智能过期策略有两种：
+1、public static final int MISFIRE_INSTRUCTION_FIRE_ONCE_NOW = 1;
+2、public static final int MISFIRE_INSTRUCTION_DO_NOTHING = 2;
+第一种是立即触发一次，第二种是忽略掉不管。定时任务过期后，需要对triiger进行处理，具体的处理是在具体的Trigger实现类中实现的
+
+配置制定错过执行任务的misfire策略：https://www.cnblogs.com/zhuwenjoyce/p/11184882.html
