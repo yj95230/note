@@ -121,6 +121,18 @@
             text-align: center;
 /*            line-height: 88px;*/
         }
+
+        /*----------------------11、实现连续的边框------------------------*/
+        .bj9{
+            padding: 1em;
+            border: 1em solid transparent;
+            width: 135px;
+            height: 120px;
+            background: linear-gradient(white,white),url(bj.png);
+            background-size: cover; /*https://www.w3school.com.cn/cssref/pr_background-size.asp*/
+            background-clip: padding-box,border-box;
+            /*background-origin: border-box;*/
+        }
     </style>
 </head>
 <body>
@@ -130,7 +142,7 @@
   <div id="bj-border4">aaa</div>
   <div id="bj1"></div>
   <div id="bj2">
-      <div id="bj2-1"></div>
+      <div id="bj2-1">属性background-origin</div>
   </div>
   <div class="bj3">
       <div class="bj3-1"></div>
@@ -140,4 +152,5 @@
   <div class="bj6">竖向条纹</div>
   <div class="bj7">倾斜45度条纹</div>
   <div class="bj8">自定义条纹的倾斜角度</div>
+  <div class="bj9">连续的图像边框</div>
 </html>
