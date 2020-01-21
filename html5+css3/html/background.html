@@ -52,7 +52,8 @@
             height: 300px;
             background: #acc4f5;
         }
-        #bj2 #bj2-1{
+        /*--------------6、背景定位 background-origin*/
+        #bj2>#bj2-1{
             border: 12px solid #f54a4e;
             margin: 11px;
             width: 190px;
@@ -60,6 +61,65 @@
             padding: 10px;
             background: url('./bj.png') no-repeat #6559ff bottom right;
             background-origin: padding-box;
+        }
+        .bj3{
+            width: 160px;
+            height: 170px;
+            background: green;
+            padding: .8em;
+        }
+        .bj3>.bj3-1{
+            background: #e655;
+            width: 100px;
+            height: 100px;
+            border-radius: .5em;
+            padding: 1em;
+        }
+        /*------------------7、背景 圆角描边效果 */
+        .bj4{
+            background: red;
+            padding: 1em;
+            border-radius: .8em;
+            width: 110px;
+            height: 110px;
+            box-shadow: 0 0 0 .7em #6559ff;
+            outline: .7em solid #655;
+            margin: auto;
+        }
+        /*--------------------8、条纹背景---横向条纹  25px代表渐变的高度为25px，由于总高度一共为130px
+        所以会产生5个渐变*/
+        .bj5{
+            width: 130px;
+            height: 130px;
+            background:linear-gradient(blue,yellow,red,black,green);
+            -webkit-background-size: 100% 25px;
+            background-size: 100% 25px;
+        }
+        /*---------------------9、条纹背景---竖向条纹--------------------------------------*/
+        .bj6{
+            width: 160px;
+            height: 150px;
+            background: linear-gradient(to right,wheat,silver,white,greenyellow);
+            text-align: center;
+            line-height: 150px;
+        }
+        /*----------------------10、倾斜条纹----------------------*/
+        .bj7{
+            width: 110px;
+            height: 110px;
+            background: linear-gradient(45deg,red,darkcyan,white,pink,lavender);
+            text-align: center;
+            line-height: 110px;
+        }
+        .bj8{
+            width: 86px;
+            height: 88px;
+            /*background: repeating-linear-gradient(60deg,#fb3,#fb3 15px,#58a 0,#58a 30px);*/
+            background: repeating-linear-gradient(60deg, #fb3 0 15px, #58a 0 30px);
+            /*background-size: 42.426406871px 42.426406871px;*/
+            font-size: 5px;
+            text-align: center;
+/*            line-height: 88px;*/
         }
     </style>
 </head>
@@ -72,4 +132,12 @@
   <div id="bj2">
       <div id="bj2-1"></div>
   </div>
+  <div class="bj3">
+      <div class="bj3-1"></div>
+  </div>
+  <div class="bj4"></div>
+  <div class="bj5"></div>
+  <div class="bj6">竖向条纹</div>
+  <div class="bj7">倾斜45度条纹</div>
+  <div class="bj8">自定义条纹的倾斜角度</div>
 </html>
