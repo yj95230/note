@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>布局</title>
+    <style type="text/css">
+        /*----------------------------------min-content属性开始------------------------------------*/
+        .container>.bj1-figure-min-content{
+            /*display: inline-block;*/
+            padding: 10px;
+            margin: 10px auto;
+            background: red;
+        }
+        .container>.bj1-figure-min-content>figure{
+            width: min-content;
+        }
+        /*----------------------------------min-content属性结束---------------------------------------*/
+
+        .bj1-figure-fill-available{
+            height: 200px;
+            background: gainsboro;
+            padding: 10px;
+            margin: 10px 20px;
+
+        }
+        .bj1-figure-fill-available>figure{
+            display: inline-block;
+            vertical-align: middle;
+            width: max-content;
+        }
+
+        /*----------------------------------------------表格布局开始-------------------------------------------------------*/
+        .table1>table{
+            table-layout: fixed;
+            border: 1px solid rebeccapurple;
+            display: table;
+            width: 260px;
+        }
+        .table1>tbody>tr>td{
+            width: 80px;
+        }
+        .table1-td{
+            text-overflow: clip;
+            word-break: break-all;
+        }
+        /*----------------------------------------------表格布局结束-------------------------------------------------------*/
+        .brother-type>ul{
+            display: inline-block;
+            height: 50px;
+        }
+        .brother-type>ul>li{
+            float: left;
+            list-style: none;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+        }
+        .brother-type>ul>li{
+            background: darkgoldenrod;
+        }
+        /*给第一个子元素li设置背景为rosybrown*/
+        .ul1>li:first-child{
+            background: rosybrown;
+        }
+        /*给从后往前数第4个元素开始，给所有li兄弟元素设置背景为darkblue*/
+        .ul2>li:nth-last-child(n+4){
+            background: darkblue;
+        }
+        /*给第1个li子元素且从后往前数正好是第3个的li子元素设置背景为#21bc43*/
+        .ul3>li:first-child:nth-last-child(5){
+            background: #21bc43;
+        }
+        /*给从后往前直到第4个li子元素的li元素设置背景为#bc2b31*/
+        .ul4>li:nth-last-child(-n+4){
+            background: #bc2b31;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div  class="bj1-figure-min-content">
+        <figure>
+            <img src="bj.png">
+            <figcaption>
+                css的min-content属性效果展示---------------------------------------
+            </figcaption>
+        </figure>
+    </div>
+    <div class="bj1-figure-fill-available">
+        <figure>
+            <img src="bj.png">
+            <figcaption>
+                css的fill-available属性效果展示---------------------------------------
+            </figcaption>
+        </figure>
+    </div>
+    <!--自定义实现一个表格样式开始-->
+    <div class="table1">
+        <table>
+            <tr class="table1-tr">
+                <td class="table1-td">aaaaaaa</td>
+                <td class="table1-td">bbbbbbbbbbbbbbbbbbbb</td>
+            </tr>
+            <tr class="table1-tr">
+                <td class="table1-td">ggggggggggggggggggggggggggggggggggggggg</td>
+                <td class="table1-td">ccccccccccccccccccccccccc</td>
+            </tr>
+        </table>
+    </div>
+    <!--自定义实现一个表格样式结束-->
+    <div class="brother-type">
+        <ul class="ul1">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+        <ul class="ul2">
+            <li>a</li>
+            <li>b</li>
+            <li>c</li>
+            <li>d</li>
+            <li>d</li>
+        </ul>
+        <ul class="ul3">
+            <li>A</li>
+            <li>B</li>
+            <li>C</li>
+            <li>D</li>
+            <li>E</li>
+        </ul>
+        <ul class="ul4">
+            <li>A</li>
+            <li>B</li>
+            <li>C</li>
+            <li>D</li>
+            <li>E</li>
+            <li>F</li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .flex-container {
+            display: flex;
+            /*换行后有多根轴线，align-content在只有一根轴线的情况下看不到效果*/
+            flex-wrap: wrap;
+
+            /* align-content适用于多根轴线，行与行之间的布局 */
+            /*默认值：子盒子均等分父盒子的高度*/
+            /*align-content: stretch;*/
+
+            /*整体上对齐*/
+            /*align-content: flex-start;*/
+
+            /*整体居中对齐*/
+            /*align-content: center;*/
+
+            /*整体下对齐*/
+            /*align-content: flex-end;*/
+
+            /*行与行，平分父盒子多余的空白*/
+            /*align-content: space-between;*/
+
+            /*各行均等分，子盒子在该行垂直居中显示*/
+            align-content: center;
+            width: 400px;
+            height: 400px;
+            background-color: gray;
+        }
+
+        .flex-item {
+            background-color: green;
+            width: 100px;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="flex-container">
+    <div class="flex-item">flex item 1</div>
+    <div class="flex-item">flex item 2</div>
+    <div class="flex-item">flex item 3</div>
+    <div class="flex-item">flex item 4</div>
+    <div class="flex-item">flex item 5</div>
+    <div class="flex-item">flex item 6</div>
+    <div class="flex-item">flex item 7</div>
+</div>
+</body>
+
+</html>

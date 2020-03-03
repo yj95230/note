@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>弹出框</title>
+    <style type="text/css">
+        .dialog{
+            min-width: 400px;
+            max-width: 100%;
+            min-height: 400px;
+            max-height: 100%;
+            background: seagreen;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        .dialog .close{
+            background: url(img/close.png) no-repeat;
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            cursor: pointer;
+            top: 5px;
+            right: 15px;
+            text-indent: -999em;
+        }
+        .dialog .footer{
+            background: orangered;
+            height: 30px;
+            display: flex;
+            justify-content: space-around;
+        }
+        .dialog .footer .btn{
+            width: 50px;
+            height: 30px;
+            cursor: pointer;
+            font-family: Arial;
+            letter-spacing: 3px;
+        }
+    </style>
+</head>
+<body>
+<div class="dialog" id="dialog">
+    <div class="close"></div>
+    <div class="footer" id="diaglog-footer">
+        <button class="btn btn-sure">确定</button>
+        <button class="btn btn-cancel">取消</button>
+    </div>
+</div>
+<script >
+ //设置dialog中footer的位置
+ function setDialogFooterCss(){
+     const pWidth=document.getElementById("dialog").clientWidth
+//     const pHeight=document.getElementById("dialog").clientHeight
+
+     const fWidth=(pWidth-100)/2
+//     const fHeight=(pHeight-100)/2
+
+     const domDialogFooter=document.getElementById("diaglog-footer")
+     domDialogFooter.style.width=fWidth+'px'
+//     domDialogFooter.style.height=fHeight+'px'
+     const dfLeft=(pWidth-fWidth)/2+'px'
+     const dfBottom='10%'
+     domDialogFooter.style.position='absolute'
+     domDialogFooter.style.left=dfLeft
+     domDialogFooter.style.bottom=dfBottom
+ }
+ setDialogFooterCss()
+</script>
+</body>
+</html>

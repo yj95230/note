@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>弹出框</title>
+    <style type="text/css">
+        #close{
+            background: url(img/close.png) no-repeat;
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            cursor: pointer;
+            top: 5px;
+            right: 15px;
+            text-indent: -999em; /*规定文本块中首行文本的缩进。属性规定文本块中首行文本的缩进。*/
+        }
+        #mask{
+            width:500px;
+            height: 500px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            background-color:#ccc;
+            opacity:0.5;
+            filter: alpha(opacity=50);/*兼容ie*/
+            /*display: flex;*/
+            /*align-items: center;*/
+            /*justify-content: center;*/
+            /*z-index:1000;*/
+        }
+        #newWindow{
+            width: 300px;
+            height: 200px;
+            background: darkgoldenrod;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform:  translate(-50%, -50%);
+        }
+    </style>
+    <script language="JavaScript">
+        function openNew(){
+            //获取页面的高度和宽度
+            var sWidth = document.body.scrollWidth
+            var sHeight = document.body.scrollHeight
+
+            //获取页面的可视区域高度和宽度
+            var wHeight=document.documentElement.clientHeight;
+
+            var oMask=document.createElement("div")
+            oMask.id="mask"
+            oMask.style.height = sHeight
+            oMask.style.width = sWidth
+            document.body.appendChild(oMask)
+
+            var newWindow=document.createElement("div")
+            newWindow.id="newWindow"
+            newWindow.innerHTML="<div id='close'></div>"
+            oMask.appendChild(newWindow)
+
+            //点击关闭按钮
+            var oClose=document.getElementById("close");
+
+            //点击登陆框以外的区域也可以关闭登陆框
+//            oClose.onclick=oMask.onclick=function(){
+//
+//
+//            };
+            //子节点触发，阻止事件捕获
+            oClose.addEventListener('click',function () {
+                oMask.removeChild(newWindow);
+            },true)
+            //父节点触发，阻止事件冒泡
+            oMask.addEventListener('click',function () {
+                document.body.removeChild(oMask);
+            },false)
+        };
+
+        window.onload=function(){
+            var oBtn=document.getElementById("open");
+            //点击登录按钮
+            oBtn.onclick=function(){
+                openNew();
+                return false;
+            }
+
+        }
+    </script>
+</head>
+<body>
+<button id="open">打开窗口</button>
+</body>
+</html>

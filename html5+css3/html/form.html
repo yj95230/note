@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单布局</title>
+    <style type="text/css">
+        /*.cu-form{*/
+        /*    width: 600px;*/
+        /*    height: 100%;*/
+        /*}*/
+        .form{
+            width: 600px;
+            height: 100%;
+        }
+        .form fieldset{
+            font-font: 黑体;
+            font-size: medium;
+        }
+        .form fieldset .form-title{
+            font-size: large;
+        }
+        .form fieldset .form-row{
+            width: 284px;
+            height: 100%;
+            display: flex;
+            float: left;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-end;
+            position: relative;
+        }
+        /*对label标签采用flexbox布局模式，使其文本内容垂直居中*/
+        .form fieldset .form-row label{
+            width: 80px;
+            height: 44px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-right: 15px;
+            text-align: right;
+        }
+        .form fieldset .form-row-ipt{
+            width: 284px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        .form fieldset .form-row-ipt .ipt {
+            width: 173px;
+            height: 40px;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        .form fieldset .form-row-ipt .checkbox{
+            /*flexbox布局方式：默认主轴是横向，从左至右；交叉轴为纵向；justiry-contet规定在主轴上的对其方式（默认左对齐），
+              align-items规定在交叉轴上的对齐方式，下面定义为center，所以它里面的内容就会居中*/
+            display: flex;
+            align-items: center;
+            float: left;
+            width: 100%;
+            height: 44px;
+        }
+        .form fieldset .form-row-ipt .ipt-textarea{
+            width: 260px;
+            height: 40px;
+            /*resize:none | both | horizontal | vertical;*/
+            /*禁止调整 | 可调宽高 | 可调宽 | 可调高*/
+            /*resize: vertical;*/
+            max-width: 280px;
+        }
+
+        /*.form-1{*/
+        /*    width: 600px;*/
+        /*    max-width: 600px;*/
+        /*    height: 100%;*/
+        /*}*/
+        /*.form-1 .form-row{*/
+        /*    display: flex;*/
+        /*    width: 568px;*/
+        /*    align-items: center;*/
+        /*}*/
+        /*.form-1 .form-row .txt{*/
+        /*    font-size: 15vm;*/
+        /*    width: 40px;*/
+        /*    height: 30px;*/
+        /*    display: flex;*/
+        /*    flex-direction: column;*/
+        /*    align-items: flex-end;*/
+        /*    justify-content: center;*/
+        /*}*/
+        /*.form-1 .form-row input{*/
+        /*}*/
+    </style>
+</head>
+<body>
+<div class="cu-form">
+    <form id="form" class="form">
+        <hgroup>
+            <h2>this is a custom form</h2>
+            <h3>....................</h3>
+        </hgroup>
+        <fieldset>
+            <legend class="form-title">填写表单信息</legend>
+            <div class="form-row">
+                <label for="name" class="txt" style="width: 40px">名字</label>
+                <label class="txt">性别 </label>
+                <label for="email" class="txt">电子邮箱</label>
+                <label for="position" class="txt">所在区对对对域</label>
+                <label for="bz" class="txt">备注</label>
+            </div>
+            <div class="form-row-ipt">
+                <input  id="name" class="ipt"/>
+                <div class="checkbox">
+                    <input type="checkbox" class="txt ipt-checkbox" id="man" name="sex" value="1"/>
+                    <label for="man" class="txt txt-checkbox">男</label>
+                    <input type="checkbox" class="txt ipt-checkbox" id="woman" name="sex" value="0"/>
+                    <label for="woman" class="txt txt-checkbox">女</label>
+                </div>
+                <input  id="email" class="ipt email"/>
+                <input id="position" list="positions" class="ipt"/>
+                <datalist id="positions">
+                    <option value="重庆沙坪坝"/>
+                    <option value="重庆渝北"/>
+                    <option value="重庆渝中"/>
+                    <option value="重庆江北"/>
+                </datalist>
+                <textarea id="bz" class="ipt ipt-textarea"></textarea>
+            </div>
+        </fieldset>
+    </form>
+<!--    <form id="form1" class="form-1">-->
+<!--        <hgroup>-->
+<!--            <h2>this is a custom form</h2>-->
+<!--            <h3>....................</h3>-->
+<!--        </hgroup>-->
+<!--        <fieldset>-->
+<!--            <legend class="form-title">填写表单信息</legend>-->
+<!--            <div class="form-row">-->
+<!--                <label for="name1" class="txt">名字</label>-->
+<!--                <input  id="name1" class="ipt"/>-->
+<!--                <label class="txt">性别 </label>-->
+<!--                <input type="checkbox" class="ipt-checkbox" id="man1" name="sex" value="1"/>-->
+<!--                <label for="man1" class="txt-checkbox">男</label>-->
+<!--                <input type="checkbox" class="ipt-checkbox" id="woman1" name="sex" value="0"/>-->
+<!--                <label for="woman1" class="txt-checkbox">女</label>-->
+<!--                <label for="email1" class="txt">电子邮箱</label>-->
+<!--                <input  id="email1" class="ipt email"/>-->
+<!--            </div>-->
+<!--            <div class="form-row">-->
+<!--                <label for="position1" class="txt">所在区域</label>-->
+<!--                <input id="position1" list="positions1" class="ipt"/>-->
+<!--                <datalist id="positions1">-->
+<!--                    <option value="重庆沙坪坝"/>-->
+<!--                    <option value="重庆渝北"/>-->
+<!--                    <option value="重庆渝中"/>-->
+<!--                    <option value="重庆江北"/>-->
+<!--                </datalist>-->
+<!--                <label for="bz1" class="txt">备注</label>-->
+<!--                <textarea id="bz1" class="ipt ipt-textarea"></textarea>-->
+<!--            </div>-->
+<!--        </fieldset>-->
+<!--    </form>-->
+</div>
+<script>
+    function assembleCss(){}
+</script>
+</body>
+</html>
