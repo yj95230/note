@@ -1,0 +1,11 @@
+{
+  "lintOnSave": false,//关闭eslint规则校验
+  "extends": "standard",//规定eslint使用standard规则
+  "plugins": [
+    "html"
+  ],
+  "parser": "babel-eslint",
+  "rules": {
+    "no-new": "off"
+  }
+}

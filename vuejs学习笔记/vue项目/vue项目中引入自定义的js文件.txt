@@ -1,0 +1,3 @@
+Vue 中如何引入第三方 JS 库 ----  https://blog.csdn.net/csdn_yudong/article/details/78795743
+
+注意：其中提到需要要修改的文件是----buil/webpack.base.conf.js

@@ -1,0 +1,10 @@
+idea创建数据库连接时，下载驱动慢的解决办法：
+1、笔记本的话，连接手机热点进行下载
+
+2、https://blog.csdn.net/weixin_30896511/article/details/95798702   https://blog.csdn.net/shayboke/article/details/71156393
+   https://blog.csdn.net/daijiguo/article/details/82887362
+   
+   
+   
+IDEA连接mysql报错！Server returns invalid timezone. Go to 'Advanced' tab and set 'serverTimezone' prope：
+https://blog.csdn.net/liuqiker/article/details/102455077   

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>控制所有组件输入的值一样</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script>
+
+  const globalData={
+    c:""
+  }
+
+  const component1={
+    data(){
+      return globalData
+    },
+    template:`<input v-model="c">`
+  }
+
+  new Vue({
+    el:"#root",
+    components:{
+      comOne:component1
+    },
+    template:`<div>
+               <com-one></com-one>
+               <com-one></com-one>
+              </div>`
+  })
+</script>
+</body>
+</html>

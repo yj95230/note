@@ -1,0 +1,29 @@
+创建路由：
+const User = {
+  template: '<div>User</div>'
+}
+
+const router = new VueRouter({
+  routes: [
+    // 动态路径参数 以冒号开头
+    { path: '/user/:id', component: User }
+  ]
+})
+
+
+一个“路径参数”使用冒号 : 标记。当匹配到一个路由时，参数值会被设置到 this.$route.params，可以在每个组件内使用。
+于是，我们可以更新 User 的模板，输出当前用户的 ID：
+
+const User = {
+  template: '<div>User {{ $route.params.id }}</div>'
+}
+
+
+我们可以在任何组件内通过 this.$router 访问路由器，也可以通过 this.$route 访问当前路由
+
+
+     模式                            匹配路径            $route.params
+/user/:username          	    /user/evan	         { username: 'evan' }
+/user/:username/post/:post_id	/user/evan/post/123	 { username: 'evan', post_id: 123 }
+
+

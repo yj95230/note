@@ -1,0 +1,1 @@
+lean_webpack_vue：是一个手写的利用webpack搭建vue前端项目，包含了一些配置说明，可以参考里面的配置，有注解

@@ -1,0 +1,5 @@
+https://www.cnblogs.com/sweeeper/p/5945914.html
+
+
+vue2.0版本开始的过滤器：https://www.cnblogs.com/exhuasted/p/7210219.html  (全局注册)
+                       https://blog.csdn.net/u013910340/article/details/72630477 （局部注册）

@@ -1,0 +1,13 @@
+#规定ide在打开此项目时的通用配置，因为ide有很多会有不同的配置，所以这里采用一个配置文件来规定一个统一的
+# editConfig 的介绍：https://editorconfig.org/   https://www.cnblogs.com/xiaohuochai/p/7160067.html
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_size = 2
+indent_style = space
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+

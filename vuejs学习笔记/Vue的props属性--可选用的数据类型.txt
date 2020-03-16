@@ -1,0 +1,2 @@
+vue的props属性可以定义的数据类型：
+https://www.cnblogs.com/wentutu/p/10930399.html

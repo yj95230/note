@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>实现自定义父子组件中数据的双向绑定</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app"></div>
+</body>
+<script>
+  //注意，vue会对props中声明的属性类型进行检测，比如：
+  //  props:{
+  //    isactive:Boolean
+  //  }
+
+  const component1={
+    props:['value'],
+    //下面的:value="value"其实就是将props中value绑定到input标签本就有的value属性上，也可以写成v-bind:value="value"的形式
+    template:`<div><input @input="handleInput" :value="value"></div>`,
+    methods:{
+      handleInput(e){
+        this.$emit('input',e.target.value)
+      }
+    }
+  }
+
+  //通过model属性来实现父子组件属性的双向绑定
+  const  component2={
+    model:{
+      prop:'value2',
+      event:"change"//自定义触发的事件名，随便去
+    },
+    props:['value2'],
+    template:`<div>
+                <input type="text" :value="value2" @input="changeValue"/>
+              </div>
+    `,
+    methods:{
+      changeValue(e){
+        this.$emit("change",e.target.value)//对应model里定义的事件名字
+      }
+    }
+  }
+
+
+new Vue({
+  el:'#app',
+  data:{
+    value:'aa',
+    parentValue2:"111"
+  },
+  components:{
+    comOne1:component1,
+    comTwo1:component2
+  },
+  watch:{
+    value(newVal,oldVal){
+    },
+    value:{
+      handler(newVal,oldVal){
+
+      },
+      immediate:true, //表示马上就会去执行这个属性对应的handler方法，而默认是在下次这个值变化时才会执行handler方法
+      deep:true //表示会监听一个对象属性它里面的属性的变化
+    }
+  },
+  //下面的:value="value"就是将实例里面data里的value属性绑定到子组件component1中的的props中的value属性
+  //下面arguments就是通过子组件的$emit()方法传递过来的参数，是一个数组
+  //v-model绑定父组件中data里的parentValue2属性
+  template:`<div>
+                <com-one1 :value="value" @input="value = arguments[0]"></com-one1>
+                <com-two1 v-model="parentValue2"></com-two1>
+            </div>`
+})
+</script>
+</html>

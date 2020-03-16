@@ -1,0 +1,10 @@
+https://juejin.im/post/5abda15cf265da237b22308c
+
+
+https://juejin.im/post/5ab8f45c5188257bf5511047#heading-4 ----- vue-music 音乐网站
+
+
+
+https://www.cnblogs.com/caihg/p/6208105.html  ------  递归组件（完整代码的实例）
+
+https://www.cnblogs.com/ychl/p/6075106.html   ------  递归组件（讲解）

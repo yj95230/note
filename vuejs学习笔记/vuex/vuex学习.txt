@@ -1,0 +1,13 @@
+关于学习vuex：
+https://vuex.vuejs.org/zh/(官方文档)
+
+结合官方文档再看下面链接中的教程：
+https://blog.csdn.net/dkr380205984/article/list/2?t=1
+
+
+vuex的action：https://blog.csdn.net/dkr380205984/article/details/82347910
+
+action用于异步事件的场景，关于js异步事件介绍：
+					    http://www.ruanyifeng.com/blog/2014/10/event-loop.html  
+											
+					    http://www.ruanyifeng.com/blog/2012/12/asynchronous%EF%BC%BFjavascript.html

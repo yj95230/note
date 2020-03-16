@@ -1,0 +1,11 @@
+https://github.com/yiminghe/async-validator   ----  官网
+
+
+https://blog.csdn.net/IT_hejinrong/article/details/79170351  ---  自定义验证器
+
+
+https://blog.csdn.net/qq_35909852/article/details/78725207  ---如何使用自定义的验证规则
+
+
+
+https://www.jb51.net/article/132533.htm  ----  编写自定义的form和validate组件

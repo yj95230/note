@@ -1,0 +1,20 @@
+为了在数据变化之后等待 Vue 完成更新 DOM ，可以在数据变化之后立即使用Vue.nextTick(callback) 。
+这样回调在 DOM 更新完成后就会调用。例如：
+
+<div id="example">{{message}}</div>
+
+var vm = new Vue({
+  el: '#example',
+  data: {
+    message: '123'
+  }
+})
+vm.message = 'new message' // 更改数据
+vm.$el.textContent === 'new message' // false
+Vue.nextTick(function () {
+  vm.$el.textContent === 'new message' // true
+})
+
+
+
+vm.$nextTick() 这个实例方法在组件内使用特别方便，因为它不需要全局 Vue ，它的回调 this 将自动绑定到当前的 Vue 实例上：

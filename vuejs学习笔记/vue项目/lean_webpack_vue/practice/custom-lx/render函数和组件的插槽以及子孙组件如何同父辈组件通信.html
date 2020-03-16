@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>render函数和组件的插槽以及子孙组件如何同父辈组件通信</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <style type="text/css">
+    .main{
+      width: 300px;
+      height: 300px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rosybrown;
+      display: flex;
+      align-content: center;
+    }
+    .main .left{
+      width:100%;
+      background: darkcyan;
+    }
+    .main .right{
+      width:100%;
+      background: darkgreen;
+    }
+    .main .other{
+      width:100%;
+      background: darkgoldenrod;
+    }
+  </style>
+</head>
+<body>
+<div id="app"></div>
+</body>
+<script>
+  //注意，vue会对props中声明的属性类型进行检测，比如：
+  //  props:{
+  //    isactive:Boolean
+  //  }
+
+  //孙子组件，component1的子组件
+  const component1Child={
+    template:`<div class="">
+                  <span>sssss</span>
+              </div>`,
+    //使用inject引用爷爷组件中需要暴露的属性，不论子组件有多深，只要调用了inject那么就可以注入provide中的数据
+    inject:['yeye','yeyeA','yeyeB'],
+    mounted(){
+      console.log("爷爷组件中的yeyeA属性："+this.yeyeA,"爷爷组件中的yeyeB属性："+this.yeyeB)
+    }
+  }
+
+  //具名插槽
+  const component1={
+    //
+//    template:`<div class="main">
+//                <div class="right" ><slot name="right"></slot></div>
+//                <div class="left" ><slot name="left"></slot></div>
+//                <child1 class="other"></child1>
+//              </div>`,
+    //采用render方法来代替上面template属性的内容方式创建组件
+    render(createElement){
+      return createElement('div',{
+        class:'main',
+      },[
+        createElement("div",{
+          class:"left"
+        },this.$slots.left),
+        createElement("div",{
+          class:"right"
+        },this.$slots.right),
+        createElement("child1",{
+          class:"other"
+        })
+      ])
+    },
+    components:{
+      child1:component1Child
+    }
+  }
+
+  //作用域插槽
+  const component2={
+    //下面slot标签中的value和c相当于一个对象中的属性
+//    template:`<div class="main2">
+//                <div class="content" ><slot value="11111" c="s"></slot></div>
+//              </div>`,
+    //采用render方法来代替上面template属性的内容方式创建组件
+    render(createElement){
+      return createElement('div',{
+        class:'main2',
+      },[
+        createElement("div",{
+          class:"content"
+        },this.$slots.default)
+      ])
+    }
+  }
+
+  //render(h)---->介绍：
+  //其中h相当于是createElement函数，此函数有3个参数：1、标签名称，如：div或自定义的组件，
+  //                                              2、标签中的属性
+  //                                              3、子标签（是一个数组）
+
+new Vue({
+  el:'#app',
+  data:{
+    yeyeA:"1",
+    yeyeB:"c"
+  },
+  //采用provide属性暴露需要给子孙组件引用的属性
+  provide(){
+    return{
+      yeye:this,
+      yeyeA:this.yeyeA,
+      yeyeB:this.yeyeB
+    }
+  },
+  components:{
+    comOne:component1,
+    comTwo:component2
+  },
+  mounted(){
+   // console.log(this.$refs.com1,this.$refs.span)
+  },
+//  template:'<div class="">'+
+//                '<com-one>'+
+//                  '<span slot="left">左边</span>'+//对应组件中的<slot name="left"></slot>
+//                  '<span slot="right">右边</span>'+//对应组件中的<slot name="right"></slot>
+//                '</com-one>'+
+//                //组件上的ref是一个vue组件对象（即当前这个组件）
+//                '<com-two ref="com2>'+
+//                  //把组件中的属性声明为一个props的对象，然后根据【对象.属性名】的方式取作用域插槽里的属性值
+//                  //html中的ref代表这个html标签，下面这个ref="span"就是<span>作用域具名插槽：11111-s</span>
+//                  '<span slot-scope="props" ref="span">作用域具名插槽：{{props.value}}-{{props.c}}</span>'+
+//                '</com-two>'+
+//            '</div>',
+  render(h){
+    return h('div',{
+      class:''
+    },[
+      h('com-one',{},[
+        h('span',{
+          slot:'left',
+          domProps: { innerHTML: '左边' }
+        }),
+        h('span',{
+          //插槽属性
+          slot:'right',
+          //dom属性---domProps
+          domProps: { innerHTML: '右边' },
+        })
+      ]),
+      h('com-two',{
+        ref:'com2',
+        scopedSlots:{
+          default:props=>h('span',"作用域具名插槽："+props.value+"-"+props.c)
+        }
+      })
+    ])
+  }
+})
+</script>
+</html>

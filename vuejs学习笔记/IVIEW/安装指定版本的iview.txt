@@ -1,0 +1,1 @@
+cnpm install iview@v3.0.0 --save

@@ -1,0 +1,1 @@
+https://cn.vuejs.org/v2/guide/migration.html#%E6%9B%BF%E6%8D%A2-capitalize-%E8%BF%87%E6%BB%A4%E5%99%A8

@@ -1,0 +1,100 @@
+Visual Studio Code：
+ctrl+~  打开命令行
+ctrl+shift+p 打开安装插件控制台，安装中文翻译
+
+步骤1：
+初始化项目：
+npm init
+
+安装webpack、vue、vue-loader、css-loader
+npm i webpack vue vue-loader css-loader
+
+解决安装时，报连接超时：
+npm config set strict-ssl false
+设置淘宝镜像
+https://blog.csdn.net/yypsober/article/details/51906616  
+
+
+安装各种插件，并且在webpack.config.js中定义各种文件的解析规则
+
+npm run build
+
+在项目里的package.json中的scripts下加入：
+                                        "build": "webpack --config webpack.config.js" //调用自定义的webpack
+										
+										
+webpack-dev-server：用于在开发环境中。在项目里的package.json中的scripts下加入：
+																				"dev": "webpack-dev-server --config webpack.config.js
+
+webpack.config.js中加入：target:"web"
+
+
+步骤2：
+设置开发环境变量：
+cross-env
+
+不想为不同的开发环境单独准备一份package.json，可以按如下步骤做，
+1、package.json：
+               "build": "cross-env NODE_ENV=production webpack --config webpack.config.js",
+               "dev": "cross-env NODE_ENV=development webpack-dev-server --config webpack.config.js"
+
+2、在webpack.config.js：
+                       const idDev = process.env.NODE_ENV === 'development'   //上面package.json中设置的环境变量，都可以从process.env中获取
+					   module.exports={....}改为 const config={... }
+					   config={...}中的plugins[...]要改为：
+					   plugins: [
+                            new VueLoaderPlugin(),
+                            new HTMLPlugin(),
+                            new webpack.DefinePlugin({
+                                'process.env': {
+                                    NODE_ENV: isDev ? '"development"' : '"production"' //暴露一个NODE_ENV的工程级别变量，注意需要引入webpack===》const webpack = require('webpack')
+                                }
+                            })
+                       ],
+					   if (isDev){
+                            config.devTool='#cheap-module-eval-source-map' //开发调试，定位到错误代码（避免编译后，找不到错误），还是开发人员写的代码
+                            config.devServer = {
+                                port:8000,
+                                host:'0.0.0.0',
+                                overlay:{
+                                    errors: true,
+                                },
+                                hot:true
+                            }
+                            config.plugins.push(
+                                new webpack.HotModuleReplacementPlugin(),
+                                new webpack.NotEmitOnErrorsPlugin()
+                            )
+                        }
+                        module.exports = config
+
+3、上面2步骤完成后，在命令行窗口输入npm run dev报错，最终原因是因为我配置的打开地址是0.0.0.0，而在我系统的hosts文件中没有配置0.0.0.0对应的映射，所以报错，加上对应的地址映射问题解决
+   参考解决资料：https://www.jianshu.com/p/4b46d4973366
+
+安装插件postcss-loader、autoprefixer、babel-loader、babel-core：
+npm i postcss-loader autoprefixer babel-loader
+npm i @babel/core
+
+安装期间出错解决：https://segmentfault.com/a/1190000016458913
+
+html的plugin：
+html-webpack-plugin
+
+
+步骤3：
+创建babel和postcss的配置文件：.babelrc和postcss.config.js
+babel的配置文件需要安装插件----》babel-preset-env babel-plugin-transform-vue-jsx babel-helper-vue-jsx-merge-props
+
+
+
+使用npm查看某个插件的版本号：
+npm view 插件 versions，如npm view webpack-dev-server versions
+
+使用npm查看某个插件的版本号：
+npm view 插件 version
+
+使用npm查看当前项目安装的某个插件的版本号：
+npm list 插件，如：npm list webpack-dev-server
+
+使用npm安装指定版本的插件：
+npm i 插件@版本号 如：npm i webpack-dev-server@3.10.0
