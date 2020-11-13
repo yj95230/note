@@ -1,0 +1,8 @@
+<$editorName$    
+                      :mode="dialogMode"
+                      :form-data="dialogData"
+                      :loading="dialogLoading"
+                      :show="dialogShow"
+                      @ok="dialogEnter"
+                      @close-dialog="dialogShow = false"
+                      @$initDialogEvent$="initDialog"/> 

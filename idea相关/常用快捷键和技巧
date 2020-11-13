@@ -1,0 +1,64 @@
+ctrl+e  访问最近编辑的软件
+
+ctrl+shift+enter    快速补全行末分号
+
+ctrl+shift+a    可以用来查找插件
+
+ctrl+shift+v    访问历史粘贴板
+
+如何在文件中竖向不规则选择选择内容：
+首先在目标文件中右击鼠标右键，选择【Column Selection Mode】列选中默认（也可以使用快捷键：alt+shift+insert），
+然后ctrl+左右箭头 可以左右移动  ，只单独使用左右箭头时 可在某一字符间切换 对某一个字符进行修改
+
+
+关于idea的Language Injection功能（快捷键是alt+enter（需要在目标代码处按快捷键））：
+http://quanzhan.applemei.com/webStack/TXpNek9RPT0=
+关于设置中定位到Language Injection：
+ctrl+alt+s 调出设置面板，在输入框中输入injection即可
+还原Language Injection中的设置：
+定位到这个设置后，在scope那一列，非“Bound-in”的就是自定义创建的，删除即可
+关于恢复sql的Language Injection检测功能：
+https://blog.csdn.net/SHU15121856/article/details/81122006
+
+
+shift+f7    选择在debug时进入哪一个方法
+在 Debug 的时候，如果一行代码中有多行语句，我们又需要进入其中的一个方法调用的话，
+经常做的方法是点开源代码，然后打上断点，或者直接右键 Run to Line，而不能使用快
+捷键快速将 Debug 的当前行进入到想要去的方法上，Intellij IDEA 提供了 Smart Step Into
+的能力，只要使用 Shift + F7，就可以选择到底要 Debug 进入哪一个方法
+
+AceJump插件：
+AceJump其实是一款能够代替鼠标的软件，只要安装了这款插件，可以在代码中跳转到任意位置。
+按快捷键进入 AceJump 模式后（默认是 Ctrl+J），再按任一个字符，插件就会在屏幕中这个
+字符的所有出现位置都打上标签，你只要再按一下标签的字符，就能把光标移到该位置上。换言之，
+你要移动光标时，眼睛一直看着目标位置就行了，根本不用管光标的当前位置。
+
+alt+shift+w：
+光标移动到目标代码处，然后按住alt+shift+w，外加上下左右键，可以移动代码
+
+alt+enter：
+快速生成变量或者子类等。选中目标，然后按下alt+enter
+
+
+shift+tab、tab：
+快速删除、增加缩进
+
+ctrl+shift+u：
+快速转换大小写
+
+
+ctrl+w：
+快速选中连续的代码块。按住ctrl，然后每次按一下w键，就会增加选中的连续代码块
+
+ctrl+p：
+显示方法的参数
+
+快捷键：
+https://juejin.im/post/5ed222d35188254340630359#heading-9
+
+
+ctrl+alt+/
+
+
+idea设置基于ESlint的代码格式化
+https://blog.csdn.net/zysen1995/article/details/107035499/

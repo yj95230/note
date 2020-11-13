@@ -1,0 +1,8 @@
+vue中层级组件，各组件的生命周期：
+https://blog.csdn.net/qq_31126175/article/details/83863141?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase
+
+https://blog.csdn.net/weixin_40923809/article/details/96485041
+
+
+使用.sync修饰符解决props属性，在子组件中的更新通知父组件出错问题：
+https://blog.csdn.net/qq_26866549/article/details/106138454?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase

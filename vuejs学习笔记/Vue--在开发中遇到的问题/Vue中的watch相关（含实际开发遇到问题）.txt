@@ -1,0 +1,11 @@
+vue中watche相关：
+
+immediate和deep属性：
+https://blog.csdn.net/Amanda_wmy/article/details/83749560?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase
+
+子组件watch不到父组件传递的props变化：
+https://blog.csdn.net/qq_26834399/article/details/90450616?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase
+
+
+文档中关于watch的介绍：
+https://cn.vuejs.org/v2/api/#vm-watch

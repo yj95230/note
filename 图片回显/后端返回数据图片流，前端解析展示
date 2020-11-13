@@ -1,0 +1,45 @@
+https://www.jianshu.com/p/2f4cf12fd8c7
+
+
+// 服务端
+ @ApiOperation(value = "返回图片流")
+    @RequestMapping(value = "/baseinfo")
+    public void infoHe(HttpServletResponse response) {
+        InputStream in = null;
+        try{
+            //从minio文件服务器上获取图片流
+            in = minioClient.getObject(bucketName, "company/template_back_20200627160552.png");
+            response.setContentType("image/png");
+            OutputStream out = response.getOutputStream();
+            byte[] buff = new byte[100];
+            int rc = 0;
+            while ((rc = in.read(buff, 0, 100)) > 0) {
+                out.write(buff, 0, rc);
+            }
+            out.flush();
+        } catch (Exception e) {
+            log.error(e.getMessage(), e);
+            PropertiesConfig.globalResponse(ResultCode.FAILED);
+//            return ResponseResult.success();
+        }finally {
+        }
+ }
+
+// 前端
+ axios.request({
+       url: 'file/baseinfo',
+       responseType: 'blob',
+       method: 'post',
+       params:{
+           fileName:fileName
+       }
+     }).then(res => {
+         let blob = new Blob([res.data],{type: "image/png"});
+         let url = window.URL.createObjectURL(blob);
+         this.imgSrc=url;
+     }), (error) => {
+         this.$message({
+             type: 'warning',
+             message: '系统错误，请联系管理员!'
+     });
+ }

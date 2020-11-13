@@ -1,0 +1,62 @@
+<template>
+<browser :component-loading="componentLoading" class="${browser-class}">
+    <template v-slot:toolbar>
+      <toolbar :can-add="canAdd"
+               :can-delete="canDelete"
+               :can-query="canQuery"
+               :selection="selection"
+               @do-add="showAdd"
+               @do-removes="doRemoves"
+               @do-query="setAndQuery">
+        <template v-slot:bottomPanel>
+          <span class="query-condition">
+             <!-- 可以在这里添加查询条件 -->
+          </span>
+        </template>
+      </toolbar>
+    </template>
+    <business-table ref="table"
+                    :table-loading="listLoading"
+                    :can-delete="canDelete"
+                    :can-modify="canModify"
+                    :data-res="dataRes"
+                    :query-params="queryParams"
+                    :has-control-column="true"
+                    @do-remove="doRemove"
+                    @table-selection="selection = \$event"
+                    @query-params="queryParams = \$event"
+                    @do-query="doQuery"
+                    @show-detail="showDetail"
+                    @show-modify="showModify">
+      
+    </business-table>
+    #[[$END$]]#
+</browser>
+</template>
+
+<script>
+import Browser from '@/components/Browser'
+import Toolbar from '@/components/Toolbar'
+import BusinessTable from '@/components/BusinessTable'
+import browserMixin from '@/utils/BrowserMixin'
+
+export default {
+name: "${NAME}",
+components: { BusinessTable, Toolbar, Browser },
+  mixins: [ browserMixin ],
+  data () {
+    return {
+      canAdd: true,
+      canDelete: true,
+      canModify: true,
+      canQuery: true,
+      api: #[[$api$]]#,
+      apiModelId: '${apiModelId}'
+    }
+  }
+}
+</script>
+
+<style scoped>
+
+</style>

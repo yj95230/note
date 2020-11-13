@@ -15,7 +15,7 @@ yarn更改为淘宝镜像（选做）：yarn config set registry https://registr
 
 vue必须引入开发版, 使用min压缩版是不能使用devtools进行调试的
 
-注意：安装好了过后，在控制台没有【vue】这个选项，可以检查所使用的的vue是否为开发版本，只有时开发版本的才会有这个选项，
+注意：安装好了过后，在控制台没有【vue】这个选项，可以检查所使用的的vue是否为开发版本，只有是开发版本的才会有这个选项，
 在线的开发版本：<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
 

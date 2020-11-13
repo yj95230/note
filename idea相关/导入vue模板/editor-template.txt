@@ -1,0 +1,49 @@
+<template>
+    <business-edit-dialog
+                          :mode="mode"
+                          :width="width"
+                          :title="title[mode]"
+                          :show="show"
+                          :form-data="formData"
+                          :loading="loading"
+                          :label-width="labelWidth"
+                          v-bind="\$attrs"
+                          v-on="\$listeners"
+                          v-on:init-dialog="initDialog">
+    </business-edit-dialog>
+</template>
+
+<script>
+import BusinessEditDialog from '@/components/BusinessEditDialog'
+import BusinessEditDialogMixin from '@/utils/BusinessEditDialogMixin'
+
+export default {
+  name: '${NAME}',
+  components: { BusinessEditDialog },
+  mixins: [BusinessEditDialogMixin],
+  inheritAttrs: false,
+  data () {
+    return {
+      title: {
+        add: '${title}新增',
+        modify: '${title}修改',
+        detail: '${title}详情'
+      }
+    }
+  },
+  computed: {},
+  watch: {},
+  methods: {
+      initDialog ({ mode, data, dialog, form }) {
+      // 当前页的初始化处理
+
+      // 抛出事件给外部组件处理。
+      this.\$emit('${outer_init_dialog_event}', { mode, data, dialog: this, form })
+    }
+  }
+}
+</script>
+
+<style scoped>
+
+</style>

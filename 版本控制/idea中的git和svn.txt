@@ -1,0 +1,5 @@
+配置github：https://cloud.tencent.com/developer/news/42755
+
+
+
+解决Idea中，项目文件右键菜单没有svn选项处理办法：https://www.cnblogs.com/codecat/p/11807159.html

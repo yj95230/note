@@ -1,3 +1,6 @@
+自定义主键生成策略：https://www.jianshu.com/p/db5f10b546df
+@GeneratedValue注解：https://blog.csdn.net/sswqzx/article/details/84337921
+
 jpa中实体的对应关系：
 					https://www.cnblogs.com/lone5wolf/p/10940844.html
 					https://blog.csdn.net/pengjunlee/article/details/79972059
@@ -25,18 +28,32 @@ https://www.iteye.com/blog/bubble-418926
 
 jpa的@JoinColumns解决有多个联合关联条件
 
-jpa使用Specification实现子查询及连接查询：https://blog.csdn.net/xuyp95/article/details/91909036
-
-jpa的多表关联查询：https://blog.csdn.net/qq_34117825/article/details/71123876
-
-jpa中解决复合主键：https://blog.csdn.net/tracycater/article/details/78319021  https://www.iteye.com/problems/6846
+jpa中解决复合主键
 
 jpa中实现查询（使用@Query、Criteria 查询来进行查询）：https://www.cnblogs.com/liyinfeng/p/8031916.html
+cascade--级联：https://blog.csdn.net/cacacai/article/details/81428063
 
 jpa实现join查询：https://blog.csdn.net/qq587492/article/details/81629689
 
-jpa使用Specification查询：https://blog.csdn.net/wangchengming1/article/details/90639553
+jpa-spec（jpa的一个查询库）：https://github.com/wenhao/jpa-spec/blob/master/README_CN.md
 
 Jpa的@Fetch抓取策略：https://blog.csdn.net/sinat_28454173/article/details/52327220
+jpa可在实体上配置@Fetch(FetchMode.JOIN)，来使用left join查询
 
-jpa-spec（jpa的一个查询库）：https://github.com/wenhao/jpa-spec/blob/master/README_CN.md
+
+包含子查询，分组统计等：
+
+详解JPA 2.0动态查询机制:Criteria API：
+https://blog.csdn.net/orz_713/article/details/52059417
+
+JPA-Criteria API：
+https://blog.csdn.net/ssehs/article/details/106093008
+
+
+
+关于设置设置 multiselect 无效问题：
+https://my.oschina.net/xiwanglr/blog/792962
+
+
+如果hql语句中用到了join，那么join的两个实体类中必须存在@manyToOne、oneToMany.....这样的关系才可以..否则是通不过的。如果必须要join而且实体中还没有这样的关系的话，只能通过select a from ABean a , BBean b where ...这种方式，或者直接写nativeSql了
+

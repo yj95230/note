@@ -1,0 +1,30 @@
+@page参考：
+https://developer.mozilla.org/zh-CN/docs/Web/CSS/@page
+
+https://developer.mozilla.org/en-US/docs/Web/CSS/@page/size
+
+
+单位---in：
+一般表bai示英寸(inch),在文章和图纸等用du in (或 in)表示。1 in = 25.4 mm
+https://zhidao.baidu.com/question/1766201672538327140.html
+
+
+系统中原打印css：
+const PRINTCSS = '@page {' +
+   'portrait{width: 297mm}' +
+  'size: A4 landscape; ' +
+  '#dialog_form_id{ ' +
+  'page-break-inside: avoid;}' + // 忽略分页符
+  '}'
+   '@media print{' +
+   'body { background: #e0e0e0 }' +
+   '#dialog_form_id{' +
+   'margin: 0;' +
+   'overflow: hidden;' +
+   'position: relative;' +
+   'box-sizing: border-box;' +
+   'page-break-after: always;' +
+   'background: white;' +
+   'box-shadow: 0 .5mm 2mm rgba(0,0,0,.3);' +
+   'margin: 5mm;}' +
+   '}'
