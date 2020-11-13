@@ -70,10 +70,10 @@ export default {
   appearance: none;
   outline none
   &:after{
-    content url('../../assets/images/round.svg')
+    content url('client/assets/images/round.svg')
   }
   &:checked:after{
-    content url('../../assets/images/done.svg')
+    content url('client/assets/images/done.svg')
   }
 }
 .destory{
