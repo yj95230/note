@@ -1,0 +1,13 @@
+https://blog.csdn.net/acevd/article/details/88219740
+
+众所周知在Java中使用Stream能够很好地帮我们流处理对象。而Stream中有一个peek方法，它与map最大的区别是它没有返回值。
+一开始我是简单地把它当做一个void类型的处理方法去使用的，但是后来却发现程序执行到此处时，不进peek方法，也就是说peek
+根本就没有被执行。
+
+仅在对流内元素进行操作时，peek才会被调用，当不对元素做任何操作时，peek自然也不会被调用了。
+用foreach改写了那段代码，问题解决。
+https://www.cnblogs.com/zgq7/p/11125419.html
+
+使用steam.peek()必须对流进行一次处理再产生一个新的stream。
+
+peek方法主要用于调试，方便debug查看Stream内进行处理的每个元素。

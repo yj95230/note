@@ -1,0 +1,7 @@
+注解：
+
+@EqualsAndHashCode()：
+https://blog.csdn.net/c851204293/article/details/96989512
+https://blog.csdn.net/qq_27093465/article/details/90056695
+
+@Data相当于@Getter @Setter @RequiredArgsConstructor @ToString @EqualsAndHashCode这5个注解的合集。
